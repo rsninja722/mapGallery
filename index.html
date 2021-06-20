@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Map Timelapse</title>
+    <style>
+        body {
+            margin: 0 0 0 0;
+        }
+
+        html {
+            background-color: #0a3044;
+            color: #92ceff;
+            font-size: 16px;
+            font-family: consolas;
+        }
+
+        div {
+            border-top: none;
+            border-bottom: none;
+            border-left: 1px solid #4e9edf;
+            border-right: 1px solid #4e9edf;
+            background-color: #00000099;
+            box-shadow: 0px 5px 3px 1px rgba(0, 0, 0, 0.75);
+            padding: 1em;
+        }
+
+        button {
+            background-color: #242c2c;
+            color: #4e9edf;
+            border-radius: 2px;
+            border: 1px solid #4e9edf;
+            cursor: pointer;
+            box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.75);
+            margin: 3px;
+            font-size: 1.5rem;
+            height: 2.5rem;
+            width: 2.4rem;
+            vertical-align: middle;
+        }
+
+        button:hover {
+            background-color: #325c5c;
+        }
+
+        button:active {
+            transform: translateY(2px);
+            background-color: #181d1d;
+        }
+
+        input {
+            background-color: #242c2c;
+            color: #92ceff;
+            border-color: #4e9edf;
+        }
+
+        p {
+            padding: 5px;
+            color: #dddddd;
+            font-size: 20px;
+        }
+
+        a {
+            color: #00c3ff;
+        }
+
+        a:visited {
+            color: rgb(50, 124, 173);
+        }
+
+        #controls {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            padding: 0.5rem;
+        }
+
+        #displayImage {
+            position: relative;
+            display: flex;
+            align-items: center;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+
+        #imageContainer {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 98%;
+            height: 95%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="imageContainer">
+        <img id="displayImage">
+    </div>
+
+    <div id="controls">
+        <span style="padding: 0.5rem;">fps</span><input type="number" min="1" max="15" value="5">
+        <button>▶</button>
+        <button>❚❚</button>
+        <button onclick="previous()">«</button>
+        <button onclick="next()">»</button>
+    </div>
+    <script src="wheel-zoom.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
