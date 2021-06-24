@@ -39,9 +39,9 @@ fetch("config.json")
             images[i].src = `images/${fileInfo.name}${i}.${fileInfo.extension}`;
         }
         updateImage(fileInfo.start);
-        wzoom.prepare();
         play();
         setInterval(animateFrames, 30);
+        setTimeout(() => {wzoom.prepare()},200);
     });
 
 function animateFrames() {
