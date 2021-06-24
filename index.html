@@ -49,6 +49,19 @@
             background-color: #181d1d;
         }
 
+        .greyed {
+            background-color: #1d1d1d;
+            color: #6b6b6b;
+        }
+        .greyed:hover {
+            background-color: #1d1d1d;
+            color: #6b6b6b;
+        }
+        .greyed:active {
+            background-color: #1d1d1d;
+            color: #6b6b6b;
+        }
+
         input {
             background-color: #242c2c;
             color: #92ceff;
@@ -104,11 +117,11 @@
     </div>
 
     <div id="controls">
-        <span style="padding: 0.5rem;">fps</span><input type="number" min="1" max="15" value="5">
-        <button>▶</button>
-        <button>❚❚</button>
-        <button onclick="previous()">«</button>
-        <button onclick="next()">»</button>
+        <span style="padding: 0.5rem;">fps</span><input id="fps" type="number" min="1" max="15" value="5">
+        <button id="play" onclick="play()">▶</button>
+        <button id="pause" class="greyed" onclick="pause()">❚❚</button>
+        <button id="next" onclick="previous()">«</button>
+        <button id="back" onclick="next()">»</button>
     </div>
     <script src="wheel-zoom.js"></script>
     <script src="main.js"></script>
